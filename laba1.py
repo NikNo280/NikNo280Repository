@@ -1,6 +1,8 @@
 def main():
     print(wordcount("Text.txt"))
     pass
+
+
 def wordcount(FileName):
     with open(FileName, "r", encoding='utf-8') as file:
         TextStr = file.read()
@@ -26,5 +28,6 @@ def wordcount(FileName):
         for i in range(0, 10):
             max_values = max(Dictionary.keys())
             SetOfWords += Dictionary.pop(max_values) + " "
-        print(SetOfWords)
-        return "SetOfWords"
+    return SetOfWords
+
+main()
