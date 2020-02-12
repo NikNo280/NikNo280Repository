@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="2e2bed20-fd65-474c-bd43-19d80d0aedd9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Text.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Text.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/laba1.py" beforeDir="false" afterPath="$PROJECT_DIR$/laba1.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -214,7 +213,14 @@
       <option name="project" value="LOCAL" />
       <updated>1581525244639</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="1.3">
+      <created>1581526396723</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1581526396723</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -251,6 +257,7 @@
     <MESSAGE value="1.2 beta" />
     <MESSAGE value="1.2" />
     <MESSAGE value="1.3 beta" />
-    <option name="LAST_COMMIT_MESSAGE" value="1.3 beta" />
+    <MESSAGE value="1.3" />
+    <option name="LAST_COMMIT_MESSAGE" value="1.3" />
   </component>
 </project>
