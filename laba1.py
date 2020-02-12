@@ -12,17 +12,16 @@ with open("Text.txt", "r", encoding='utf-8') as file:
     Dictionary = dict.fromkeys(['a', 'b'])
     Dictionary.clear()
     for i in ArrStr:
-        for k in ArrStr:
-            if (i == k):
-                Key += 1
-        other = {Key: i}
-        Dictionary.update(other)
-        Key = 0
+        if(i != ""):
+            for k in ArrStr:
+                if (i == k):
+                    Key += 1
+            other = {Key: i}
+            Dictionary.update(other)
+            Key = 0
     print(Dictionary)
     print(Dictionary.setdefault(10))
-    max_values = max(Dictionary.keys())
-    for key in sorted(Dictionary.keys()):
-        if Dictionary[key] == max_values:
-            print(key)
-            break
-    print(max_values)
+    for i in range(1, 10):
+        max_values = max(Dictionary.keys())
+
+        print(Dictionary.pop(max_values))
