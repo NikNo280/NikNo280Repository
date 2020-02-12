@@ -1,4 +1,4 @@
-with open("text.txt", "r") as file:
+with open("Text.txt", "r") as file:
     str1 = file.readline()
     print(str1, end="")
     str2 = file.readline()
