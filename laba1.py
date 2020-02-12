@@ -1,6 +1,5 @@
-print(5)
-for i in range(1, 10):
-    print(i)
-    i+1
-if(i > 4):
-    i = 6
+with open("text.txt", "r") as file:
+    str1 = file.readline()
+    print(str1, end="")
+    str2 = file.readline()
+    print(str2)
