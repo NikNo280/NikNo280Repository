@@ -14,20 +14,15 @@ def wordcount(FileName):
                 UpdatedTextStr += i
         ArrStr = UpdatedTextStr.split(" ")
         Key = 0
-        Dictionary = dict.fromkeys(['a', 'b'])
+        Dictionary = dict.fromkeys(['a'])
         Dictionary.clear()
         for i in ArrStr:
-            if(i != ""):
-                for k in ArrStr:
-                    if (i == k):
-                        Key += 1
-                other = {Key: i}
-                Dictionary.update(other)
-                Key = 0
-        SetOfWords = ""
-        for i in range(0, 10):
-            max_values = max(Dictionary.keys())
-            SetOfWords += Dictionary.pop(max_values) + " "
-    return SetOfWords
+            for j in ArrStr:
+                if(i == j):
+                    Key += 1
+            other = {i : Key}
+            Dictionary.update(other)
+            Key = 0
+    return Dictionary
 
 main()
