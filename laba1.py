@@ -4,6 +4,7 @@ with open("Text.txt", "r", encoding='utf-8') as file:
     TextStr = TextStr.lower()
     UpdatedTextStr = ""
     for i in TextStr:
-        if((i <= 'a' and i >= 'z') or (i <= 'а' and i >= 'я') or (i == ' ')):
-            print(i)
-    print(UpdatedTextStr)
+        if((i <= "я" and i >= "а") or (i == " ") or (i <= "z" and i >= "a")):
+            UpdatedTextStr += i
+    ArrStr = UpdatedTextStr.split(" ")
+    print(ArrStr)
