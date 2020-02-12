@@ -1,5 +1,13 @@
+import random
+
 def main():
+    with open("Number.txt", "r", encoding='utf-8') as file:
+        NumberStr = file.read()
+        ArrNumber = NumberStr.split(" ")
+    QuickSortNumber(ArrNumber)
+
     WordCount("Text.txt")
+
     for fib in fibonacci(20):
         print(fib, end = " ")
     print()
@@ -9,7 +17,6 @@ def main():
 def WordCount(FileName):
     with open(FileName, "r", encoding='utf-8') as file:
         TextStr = file.read()
-        file.close()
         TextStr = TextStr.lower()
         UpdatedTextStr = ""
         for i in TextStr:
@@ -49,4 +56,20 @@ def fibonacci(n):
         fib2 = fib_sum
         yield fib1
 
+def QuickSortNumber(ArrNumber):
+    if len(ArrNumber) <= 1:
+        return ArrNumber
+    else:
+        q = random.choice(ArrNumber)
+        s_nums = []
+        m_nums = []
+        e_nums = []
+        for n in ArrNumber:
+            if n < q:
+                s_nums.append(n)
+            elif n > q:
+                m_nums.append(n)
+            else:
+                e_nums.append(n)
+        return QuickSortNumber(s_nums) + e_nums + QuickSortNumber(m_nums)
 main()
