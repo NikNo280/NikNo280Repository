@@ -20,4 +20,9 @@ with open("Text.txt", "r", encoding='utf-8') as file:
         Key = 0
     print(Dictionary)
     print(Dictionary.setdefault(10))
-    print(Dictionary.keys())
+    max_values = max(Dictionary.keys())
+    for key in sorted(Dictionary.keys()):
+        if Dictionary[key] == max_values:
+            print(key)
+            break
+    print(max_values)
