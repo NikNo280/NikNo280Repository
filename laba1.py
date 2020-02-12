@@ -3,8 +3,12 @@ import random
 def main():
     with open("Number.txt", "r", encoding='utf-8') as file:
         NumberStr = file.read()
-        ArrNumber = NumberStr.split(" ")
-    QuickSortNumber(ArrNumber)
+        ArrNumberStr = NumberStr.split(" ")
+        array = [29, 19, 47, 11, 6, 19, 24, 12, 17, 23, 11, 71, 41, 36, 71, 13, 18, 32, 26]
+    ArrNumber = [int(item) for item in ArrNumberStr]
+    print(ArrNumber)
+    quick_sort(ArrNumber)
+    print(ArrNumber)
 
     WordCount("Text.txt")
 
@@ -56,20 +60,27 @@ def fibonacci(n):
         fib2 = fib_sum
         yield fib1
 
-def QuickSortNumber(ArrNumber):
-    if len(ArrNumber) <= 1:
-        return ArrNumber
-    else:
-        q = random.choice(ArrNumber)
-        s_nums = []
-        m_nums = []
-        e_nums = []
-        for n in ArrNumber:
-            if n < q:
-                s_nums.append(n)
-            elif n > q:
-                m_nums.append(n)
-            else:
-                e_nums.append(n)
-        return QuickSortNumber(s_nums) + e_nums + QuickSortNumber(m_nums)
+
+def quick_sort(array, begin=0, end=None):
+    if end is None:
+        end = len(array) - 1
+
+    def _quicksort(array, begin, end):
+        if begin >= end:
+            return
+        pivot = partition(array, begin, end)
+        _quicksort(array, begin, pivot - 1)
+        _quicksort(array, pivot + 1, end)
+
+    return _quicksort(array, begin, end)
+
+def partition(array, begin, end):
+    pivot = begin
+    for i in range(begin+1, end+1):
+        if array[i] <= array[begin]:
+            pivot += 1
+            array[i], array[pivot] = array[pivot], array[i]
+    array[pivot], array[begin] = array[begin], array[pivot]
+    return pivot
+
 main()
