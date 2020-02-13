@@ -1,17 +1,25 @@
 import sys
-
+import argparse
 
 def main():
-    if len(sys.argv) > 2:
-        if (sys.argv[1] == "1"):
-            WordCount(sys.argv[2])
-        elif (sys.argv[1] == "2"):
-            QuickSort(sys.argv[2])
-        elif (sys.argv[1] == "3"):
-            FibonacciFactory(int(sys.argv[2]))
+    parser = createParser()
+    namespace = parser.parse_args(sys.argv[1:])
+    if (namespace.NumberFunc == 1):
+        WordCount(namespace.Argument)
+    elif (namespace.NumberFunc == 2):
+        QuickSort(namespace.Argument)
+    elif (namespace.NumberFunc == 3):
+        FibonacciFactory(int(namespace.Argument))
     else:
         print("Такой функции нет")
     pass
+
+
+def createParser():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('NumberFunc', type=int)
+    parser.add_argument('Argument')
+    return parser
 
 
 def WordCount(FileName):
