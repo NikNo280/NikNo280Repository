@@ -1,5 +1,6 @@
 import sys
 import argparse
+import operator
 
 def main():
     parser = createParser()
@@ -9,6 +10,8 @@ def main():
     elif (namespace.NumberFunc == 2):
         QuickSort(namespace.Argument)
     elif (namespace.NumberFunc == 3):
+        MergeSort(namespace.Argument)
+    elif (namespace.NumberFunc == 4):
         FibonacciFactory(int(namespace.Argument))
     else:
         print("Такой функции нет")
@@ -69,7 +72,7 @@ def FibonacciFactory(n):
         print(fib, end = " ")
     print()
 
-def AlgorithmQuickSort(array, begin=0, end=None):
+def AlgoritmQuickSort(array, begin=0, end=None):
     if end is None:
         end = len(array) - 1
 
@@ -97,9 +100,43 @@ def QuickSort(FileName):
     ArrNumberStr = NumberStr.split(" ")
     ArrNumber = [int(item) for item in ArrNumberStr]
     print(ArrNumber)
-    AlgorithmQuickSort(ArrNumber)
+    AlgoritmQuickSort(ArrNumber)
     print(ArrNumber)
     pass
 
+def AlgoritmMergeSort(L, compare = operator.lt):
+    if len(L) < 2:
+        return L[:]
+    else:
+        middle = int(len(L) / 2)
+        left = AlgoritmMergeSort(L[:middle], compare)
+        right = AlgoritmMergeSort(L[middle:], compare)
+        return Merge(left, right, compare)
 
+def Merge(left, right, compare):
+    result = []
+    i, j = 0, 0
+    while i < len(left) and j < len(right):
+        if compare(left[i], right[j]):
+            result.append(left[i])
+            i += 1
+        else:
+            result.append(right[j])
+            j += 1
+    while i < len(left):
+        result.append(left[i])
+        i += 1
+    while j < len(right):
+        result.append(right[j])
+        j += 1
+    return result
+
+def MergeSort(FileName):
+    with open(FileName, "r", encoding='utf-8') as file:
+        NumberStr = file.read()
+    ArrNumberStr = NumberStr.split(" ")
+    ArrNumber = [int(item) for item in ArrNumberStr]
+    print(ArrNumber)
+    print(AlgoritmMergeSort(ArrNumber))
+    pass
 main()
