@@ -4,15 +4,13 @@ import operator
 
 
 def main():
-    with open("Number.txt", "r", encoding='utf-8') as file:
-        NumberStr = file.read()
-    ArrNumberStr = NumberStr.split(" ")
-    ArrNumber = [int(item) for item in ArrNumberStr]
-    print(ArrNumber)
-    QuickSort(ArrNumber)
-    print(ArrNumber)
-
-
+    case = input()
+    if(case == "1"):
+        WordCount("Text.txt")
+    elif(case == "2"):
+        QuickSort("Number.txt")
+    elif (case == "3"):
+        FibonacciFactory(int(input()))
     pass
 
 
@@ -63,7 +61,7 @@ def FibonacciFactory(n):
         print(fib, end = " ")
     print()
 
-def QuickSort(array, begin=0, end=None):
+def AlgorithmQuickSort(array, begin=0, end=None):
     if end is None:
         end = len(array) - 1
 
@@ -84,5 +82,16 @@ def partition(array, begin, end):
             array[i], array[pivot] = array[pivot], array[i]
     array[pivot], array[begin] = array[begin], array[pivot]
     return pivot
+
+def QuickSort(FileName):
+    with open(FileName, "r", encoding='utf-8') as file:
+        NumberStr = file.read()
+    ArrNumberStr = NumberStr.split(" ")
+    ArrNumber = [int(item) for item in ArrNumberStr]
+    print(ArrNumber)
+    AlgorithmQuickSort(ArrNumber)
+    print(ArrNumber)
+    pass
+
 
 main()
