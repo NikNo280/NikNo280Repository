@@ -1,16 +1,16 @@
-import random
 import sys
-import operator
 
 
 def main():
-    case = input()
-    if(case == "1"):
-        WordCount("Text.txt")
-    elif(case == "2"):
-        QuickSort("Number.txt")
-    elif (case == "3"):
-        FibonacciFactory(int(input()))
+    if len(sys.argv) > 2:
+        if (sys.argv[1] == "1"):
+            WordCount(sys.argv[2])
+        elif (sys.argv[1] == "2"):
+            QuickSort(sys.argv[2])
+        elif (sys.argv[1] == "3"):
+            FibonacciFactory(int(sys.argv[2]))
+    else:
+        print("Такой функции нет")
     pass
 
 
