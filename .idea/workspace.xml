@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2e2bed20-fd65-474c-bd43-19d80d0aedd9" name="Default Changelist" comment="">
+    <list default="true" id="2e2bed20-fd65-474c-bd43-19d80d0aedd9" name="Default Changelist" comment="2.1">
+      <change afterPath="$PROJECT_DIR$/python" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/laba1.py" beforeDir="false" afterPath="$PROJECT_DIR$/laba1.py" afterDir="false" />
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -40,12 +42,17 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="C:/Program Files/Git/cmd/git.exe" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../laba2/to_json.py" />
     <property name="settings.editor.selected.configurable" value="preferences.editor" />
   </component>
   <component name="RecentsManager">
@@ -65,7 +72,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.to_json">
     <configuration name="laba1" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="laba1" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -87,6 +94,33 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="to_json" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="laba1" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../laba2" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../laba2/to_json.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.to_json" />
+        <item itemvalue="Python.laba1" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -99,6 +133,7 @@
       <option name="presentableId" value="Default" />
       <updated>1581441025995</updated>
       <workItem from="1582196025463" duration="5000" />
+      <workItem from="1583941281349" duration="40000" />
     </task>
     <task id="LOCAL-00001" summary="12">
       <created>1581441928498</created>
@@ -282,7 +317,14 @@
       <option name="project" value="LOCAL" />
       <updated>1581617446879</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="2.1">
+      <created>1582198840851</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1582198840851</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -331,12 +373,17 @@
     <MESSAGE value="1.8" />
     <MESSAGE value="1.9" />
     <MESSAGE value="2.0" />
-    <option name="LAST_COMMIT_MESSAGE" value="2.0" />
+    <MESSAGE value="2.1" />
+    <option name="LAST_COMMIT_MESSAGE" value="2.1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="977" y="525" key="com.intellij.ide.util.TipDialog" timestamp="1582196025485">
+    <state x="977" y="525" key="com.intellij.ide.util.TipDialog" timestamp="1583941281488">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="977" y="525" key="com.intellij.ide.util.TipDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1582196025485" />
+    <state x="977" y="525" key="com.intellij.ide.util.TipDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1583941281488" />
+    <state x="731" y="321" key="new project wizard" timestamp="1583941318076">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="731" y="321" key="new project wizard/0.0.2560.1400@0.0.2560.1400" timestamp="1583941318076" />
   </component>
 </project>

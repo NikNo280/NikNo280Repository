@@ -1,6 +1,6 @@
 import sys
 import argparse
-
+import random
 
 def main():
     parser = create_parser()
@@ -13,48 +13,40 @@ def main():
         merge_sort(namespace.argument)
     elif (namespace.number_func == 4):
         fibonacci_factory(int(namespace.argument))
-    else:
-        print("Такой функции нет")
     pass
 
 
 def create_parser():
     parser = argparse.ArgumentParser()
-    parser.add_argument('number_func', type=int)
-    parser.add_argument('argument')
+    parser.add_argument('number_func', choices=[1, 2, 3, 4], type=int, default=4)
+    parser.add_argument('argument', default=10)
     return parser
 
 
 def word_count(file_name):
     with open(file_name, "r", encoding='utf-8') as file:
-        text_str = file.read()
-        text_str = text_str.lower()
+        text_str = file.read().lower()
         updated_text_str = ""
         for i in text_str:
             if ((i <= "я" and i >= "а") or (i == " ") or (i <= "z" and i >= "a") or (i == "-")):
                 updated_text_str += i
         arr_str = updated_text_str.split(" ")
-        key = 0
-        dictionary = dict.fromkeys(['a'])
-        dictionary.clear()
-        for i in arr_str:
-            if (i != ""):
-                for j in arr_str:
-                    if (i == j):
-                        key += 1
-                other = {i: key}
-                dictionary.update(other)
-                key = 0
-        print(dictionary)
-        end_str = ""
-        for i in range(0, 10):
-            max_value = max(dictionary.values())
-            for j in dictionary.items():
-                if (j[1] == max_value):
-                    end_str += j[0] + " "
-                    dictionary.pop(j[0])
-                    break
-        print(end_str)
+        dictionary = {}
+
+        for index in range(0, len(arr_str)):
+            str = arr_str[index]
+
+            if(str != ''):
+                if(dictionary.get(str) == None):
+                    dictionary[str] = 1
+                else:
+                    dictionary[str] = dictionary[str] + 1
+
+        arr_str = sorted(dictionary.items(), key=lambda count: count[1])
+        print(arr_str)
+        dictionary = dict(arr_str[-10:])
+        arr_str = list(dictionary.keys())
+        print(' '.join(arr_str))
     pass
 
 
@@ -73,38 +65,29 @@ def fibonacci_factory(n):
         print(fib, end=" ")
 
 
-def algoritm_quick_sort(array, begin=0, end=None):
-    if end is None:
-        end = len(array) - 1
-
-    def quicksort(array, begin, end):
-        if begin >= end:
-            return
-        pivot = partition(array, begin, end)
-        quicksort(array, begin, pivot - 1)
-        quicksort(array, pivot + 1, end)
-
-    return quicksort(array, begin, end)
-
-
-def partition(array, begin, end):
-    pivot = begin
-    for i in range(begin + 1, end + 1):
-        if array[i] <= array[begin]:
-            pivot += 1
-            array[i], array[pivot] = array[pivot], array[i]
-    array[pivot], array[begin] = array[begin], array[pivot]
-    return pivot
+def algoritm_quick_sort(array):
+    if len(array) <= 1:
+        return array
+    else:
+        pivot = random.choice(array)
+        left = []
+        middle = []
+        right = []
+        for elem in array:
+            if elem < pivot:
+                left.append(elem)
+            elif elem > pivot:
+                right.append(elem)
+            else:
+                middle.append(elem)
+        return algoritm_quick_sort(left) + middle + algoritm_quick_sort(right)
 
 
 def quick_sort(file_name):
     with open(file_name, "r", encoding='utf-8') as file:
-        number_str = file.read()
-    arr_number_str = number_str.split(" ")
-    arr_number = [int(item) for item in arr_number_str]
+        arr_number = list(map(int, file.read().split(" ")))
     print(arr_number)
-    algoritm_quick_sort(arr_number)
-    print(arr_number)
+    print(algoritm_quick_sort(arr_number))
     pass
 
 
@@ -139,9 +122,7 @@ def merge(left, right):
 
 def merge_sort(file_name):
     with open(file_name, "r", encoding='utf-8') as file:
-        number_str = file.read()
-    arr_number_str = number_str.split(" ")
-    arr_number = [int(item) for item in arr_number_str]
+        arr_number = list(map(int, file.read().split(" ")))
     print(arr_number)
     print(algoritm_merge_sort(arr_number))
     pass
